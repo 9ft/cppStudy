@@ -22,5 +22,16 @@ int main() {
 		cout << *i << ",";
 	cout << endl;
 
+	vector<int>::reverse_iterator r; //反向迭代器
+	for (r = v.rbegin(); r != v.rend(); r++)
+		cout << *r << ",";
+	cout << endl;
+
+	vector<int>::iterator j; //非常量迭代器
+	for (j = v.begin(); j != v.end(); j++)
+		*j = 100;
+	for (i = v.begin(); i != v.end(); i++)
+		cout << *i << ",";
+
 	return 0;
 }
