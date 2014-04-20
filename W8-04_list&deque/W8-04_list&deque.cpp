@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <algorithm>
 using namespace std;
 
 class A { //定义类A, 并以友元重载<, ==和<<
@@ -89,6 +90,25 @@ int main() {
 	lst1.reverse();
 	cout << "9)";
 	PrintList(lst1);
+	cout << endl;
+
+	lst2.push_back(100);
+	lst2.push_back(200);
+	lst2.push_back(300);
+	lst2.push_back(400);
+
+	list<A>::iterator p1, p2, p3;
+	p1 = find(lst1.begin(), lst1.end(), 3);
+	p2 = find(lst2.begin(), lst2.end(), 200);
+	p3 = find(lst2.begin(), lst2.end(), 400);
+	lst1.splice(p1, lst2, p2, p3); //将[p2,p3)插入p1之前，并从lst2中删除[p2,p3)
+
+	cout << "11)";
+	PrintList(lst1);
+	cout << endl;
+
+	cout << "12)";
+	PrintList(lst2);
 	cout << endl;
 
 	return 0;
