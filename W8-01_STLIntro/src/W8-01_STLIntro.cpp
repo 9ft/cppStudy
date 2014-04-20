@@ -7,6 +7,7 @@
 //============================================================================
 
 #include<vector>
+#include<algorithm>
 #include <iostream>
 using namespace std;
 
@@ -32,6 +33,25 @@ int main() {
 		*j = 100;
 	for (i = v.begin(); i != v.end(); i++)
 		cout << *i << ",";
+
+	//find算法示例
+	vector<int>::iterator p;
+
+	p = find(v.begin(), v.end(), 3);
+	if (p != v.end())
+		cout << *p << endl;
+
+	p = find(v.begin(), v.end(), 9);
+	if (p == v.end())
+		cout << "not found " << endl;
+
+	p = find(v.begin() + 1, v.end() - 2, 1); //整个容器：[1,2,3,4]， 查找区间：[2,3)
+	if (p != v.end())
+		cout << *p << endl;
+
+	int array[10] = {10,20,30,40};
+	int * pp = find(array, array + 4, 20); //数组名是迭代器
+	cout << *pp << endl;
 
 	return 0;
 }
