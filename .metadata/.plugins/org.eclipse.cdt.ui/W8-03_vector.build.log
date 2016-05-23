@@ -1,0 +1,10 @@
+13:49:18 **** Incremental Build of configuration Debug for project W8-03_vector ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\W8-03_vector.o" "..\\src\\W8-03_vector.cpp" 
+..\src\W8-03_vector.cpp: In function 'int main()':
+..\src\W8-03_vector.cpp:14:6: warning: unused variable 'i' [-Wunused-variable]
+..\src\W8-03_vector.cpp:15:6: warning: unused variable 'a' [-Wunused-variable]
+g++ -o W8-03_vector.exe "src\\W8-03_vector.o" 
+
+13:49:19 Build Finished (took 965ms)
+

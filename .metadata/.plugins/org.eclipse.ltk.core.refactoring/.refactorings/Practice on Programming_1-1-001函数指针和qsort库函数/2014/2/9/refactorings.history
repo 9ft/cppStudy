@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Practice on Programming_1-1-001函数指针和qsort库函数/src/Practice on Programming_1-1-001函数指针.cpp&apos; to &apos;Practice on Programming_1-1-001函数指针和qsort库函数.cpp&apos;" description="Rename resource &apos;Practice on Programming_1-1-001函数指针.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Practice on Programming_1-1-001函数指针.cpp" name="Practice on Programming_1-1-001函数指针和qsort库函数.cpp" stamp="1393319163691" updateReferences="true"/>
+</session>

@@ -1,0 +1,11 @@
+#include <iostream>
+#include <set>
+using namespace std;
+
+template <class T>
+void Print(T first,T last){
+	for(;first!=last;++first)
+		cout<<*first<<" ";
+	cout<<endl;
+
+}

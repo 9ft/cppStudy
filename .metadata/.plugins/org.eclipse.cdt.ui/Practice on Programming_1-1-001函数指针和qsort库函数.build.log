@@ -1,0 +1,7 @@
+20:36:17 **** Rebuild of configuration Debug for project Practice on Programming_1-1-001函数指针和qsort库函数 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "Practice on Programming_1-1-001函数指针和qsort库函数.o" "..\\Practice on Programming_1-1-001函数指针和qsort库函数.cpp" 
+g++ -o "Practice on Programming_1-1-001函数指针和qsort库函数.exe" "Practice on Programming_1-1-001函数指针和qsort库函数.o" 
+
+20:36:18 Build Finished (took 1s.325ms)
+

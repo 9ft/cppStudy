@@ -1,0 +1,16 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class A {
+public:
+	int n;
+	A(int i) :
+			n(i) {
+	}
+};
+bool operator<(const A& a1, const A& a2) {
+	cout << "<called" << endl;
+	if (a1.n == 3 && a2.n == 7)
+		return true;
+	return false;
+}

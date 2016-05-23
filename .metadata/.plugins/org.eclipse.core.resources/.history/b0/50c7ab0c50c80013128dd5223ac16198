@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : W8-03_vector.cpp
+// Author      : Mindy
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int i;
+	int a[5]={1,2,3,4,5};
+	vector<int> v(5);
+
+
+}

@@ -1,0 +1,11 @@
+20:36:24 **** Rebuild of configuration Debug for project Practice on Programming_3-quiz ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp:43:20: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp:44:23: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp:117:20: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp:118:23: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+g++ -o "Practice on Programming_3-quiz.exe" main.o 
+
+20:36:29 Build Finished (took 4s.589ms)
+

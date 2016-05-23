@@ -1,0 +1,249 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 2014Äê3ÔÂ4ÈÕ
+ *      Author: Mindy
+ */
+
+#include<iostream>
+#include<String>
+using namespace std;
+
+const int RaceCount = 5;
+static int Time = 0;
+static void TimeTick() {
+	Time++;
+}
+static void TimeShow() {
+	cout.fill('0');
+	cout.width(3);
+	cout << Time << " ";
+}
+
+class BasePara {
+	unsigned int dragonHP;
+	unsigned int ninjaHP;
+	unsigned int icemanHP;
+	unsigned int lionHP;
+	unsigned int wolfHP;
+public:
+	BasePara() {
+	}
+	BasePara(int dragon, int ninja, int iceman, int lion, int wolf) :
+			dragonHP(dragon), ninjaHP(ninja), icemanHP(iceman), lionHP(lion), wolfHP(wolf) {
+	}
+	void setBasePara() {
+		unsigned int dragonHPtmp;
+		unsigned int ninjaHPtmp;
+		unsigned int icemanHPtmp;
+		unsigned int lionHPtmp;
+		unsigned int wolfHPtmp;
+		cin >> dragonHPtmp >> ninjaHPtmp >> icemanHPtmp >> lionHPtmp >> wolfHPtmp;
+		//BasePara para(dragonHPtmp, ninjaHPtmp, icemanHPtmp, lionHPtmp, wolfHPtmp);
+		setDragonHp(dragonHPtmp);
+		setNinjaHp(ninjaHPtmp);
+		setIcemanHp(icemanHPtmp);
+		setLionHp(lionHPtmp);
+		setWolfHp(wolfHPtmp);
+	}
+
+	int getHP(string str) {
+		if (str == "dragon")
+			return dragonHP;
+		if (str == "ninja")
+			return ninjaHP;
+		if (str == "iceman")
+			return icemanHP;
+		if (str == "lion")
+			return lionHP;
+		if (str == "wolf")
+			return wolfHP;
+	}
+
+	unsigned int getDragonHp() {
+		return dragonHP;
+	}
+
+	unsigned int getIcemanHp() {
+		return icemanHP;
+	}
+
+	unsigned int getLionHp() {
+		return lionHP;
+	}
+
+	unsigned int getNinjaHp() {
+		return ninjaHP;
+	}
+
+	unsigned int getWolfHp() {
+		return wolfHP;
+	}
+
+	void setDragonHp(unsigned int dragonHp) {
+		dragonHP = dragonHp;
+	}
+
+	void setIcemanHp(unsigned int icemanHp) {
+		icemanHP = icemanHp;
+	}
+
+	void setLionHp(unsigned int lionHp) {
+		lionHP = lionHp;
+	}
+
+	void setNinjaHp(unsigned int ninjaHp) {
+		ninjaHP = ninjaHp;
+	}
+
+	void setWolfHp(unsigned int wolfHp) {
+		wolfHP = wolfHp;
+	}
+};
+class Team {
+	unsigned int HP = 0;
+	unsigned int count = 0;
+	string teamName;
+	string sortStr[RaceCount];
+	string currentRace;
+public:
+	Team(string teamname, int hp) {
+		teamName = teamname;
+		HP = hp;
+		for (int i = 0; i < RaceCount; i++) {
+			sortStr[i] = "0";
+		}
+		currentRace = "0";
+	}
+
+	void initCurrentRace() {
+		currentRace = sortStr[0];
+	}
+	void setSortStr_i(int i, string str) {
+		sortStr[i] = str;
+	}
+	unsigned int getCount() const {
+		return count;
+	}
+
+	void setCount(unsigned int count = 0) {
+		this->count = count;
+	}
+
+	unsigned int getHp() const {
+		return HP;
+	}
+
+	void setHp(unsigned int hp = 0) {
+		HP = hp;
+	}
+	const string& getCurrentRace() const {
+		return currentRace;
+	}
+
+	void setCurrentRace(const string& currentRace) {
+		this->currentRace = currentRace;
+	}
+
+	const string& getTeamName() const {
+		return teamName;
+	}
+
+	void setTeamName(const string& teamName) {
+		this->teamName = teamName;
+	}
+	string gotoNextRace() {
+		if (currentRace == sortStr[0]) {
+			currentRace = sortStr[1];
+			return sortStr[1];
+		}
+		if (currentRace == sortStr[1]) {
+			currentRace = sortStr[2];
+			return sortStr[2];
+		}
+		if (currentRace == sortStr[2]) {
+			currentRace = sortStr[3];
+			return sortStr[3];
+		}
+		if (currentRace == sortStr[3]) {
+			currentRace = sortStr[4];
+			return sortStr[4];
+		}
+		if (currentRace == sortStr[4]) {
+			currentRace = sortStr[0];
+			return sortStr[0];
+		}
+	}
+
+	int makeRaceWarrior(string raceStr, BasePara para) {
+		if (HP > para.getHP(raceStr)) {
+			HP -= para.getHP(raceStr);
+			count++;
+			TimeTick();
+
+			TimeShow();
+			cout << getTeamName() << " " << raceStr << " " << count << " born with strength " << para.getHP(raceStr) << ",1 " << raceStr << " in " << getTeamName() << " headquarter" << endl;
+
+			return 1;
+		} else
+			return 0;
+
+	}
+	int makeWarrior(BasePara para) {
+
+		if (makeRaceWarrior(currentRace, para) == 1) {
+			gotoNextRace();
+			return 1;
+		} else {
+			gotoNextRace();
+			makeRaceWarrior(currentRace, para);
+			return 0;
+		}
+	}
+};
+
+static int TestNO = 0;
+static void setTestNO() {
+	cin >> TestNO;
+}
+static void showTestNO() {
+	cout << "Case:" << TestNO << endl;
+}
+
+int main() {
+	setTestNO();
+
+	int tmpHp;
+	cin >> tmpHp;
+
+	string redSortStr[RaceCount] = { "iceman", "lion", "wolf", "ninja", "dragon" };
+	string blueSortStr[RaceCount] = { "lion", "dragon", "ninja", "iceman", "wolf" };
+
+	Team red("red", tmpHp);
+	Team blue("blue", tmpHp);
+	for (int i = 0; i <= 4; i++) {
+		red.setSortStr_i(i, redSortStr[i]);
+		blue.setSortStr_i(i, redSortStr[i]);
+	}
+	BasePara para;
+	para.setBasePara();
+
+	showTestNO();
+
+	red.initCurrentRace();
+	blue.initCurrentRace();
+
+	while ((red.getHp() > 0) && (blue.getHp() > 0)) {
+		red.makeWarrior(para);
+		blue.makeWarrior(para);
+	}
+	while (red.getHp() > 0) {
+		red.makeWarrior(para);
+	}
+	while (blue.getHp() > 0) {
+		blue.makeWarrior(para);
+	}
+
+	return 1;
+}
+

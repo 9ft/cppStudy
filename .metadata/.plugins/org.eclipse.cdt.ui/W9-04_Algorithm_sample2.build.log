@@ -1,0 +1,7 @@
+15:52:40 **** Incremental Build of configuration Debug for project W9-04_Algorithm_sample2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o W9-04_Algorithm_sample2.o "..\\W9-04_Algorithm_sample2.cpp" 
+g++ -o W9-04_Algorithm_sample2.exe W9-04_Algorithm_sample2.o 
+
+15:52:41 Build Finished (took 1s.99ms)
+

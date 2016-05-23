@@ -1,0 +1,10 @@
+13:08:08 **** Incremental Build of configuration Debug for project W9-01_set&multiset_sample2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o W9-01_set&multiset_sample2.o "..\\W9-01_set&multiset_sample2.cpp" 
+..\W9-01_set&multiset_sample2.cpp: In function 'int main()':
+..\W9-01_set&multiset_sample2.cpp:8:2: error: expected ',' or ';' before 'set'
+..\W9-01_set&multiset_sample2.cpp:10:11: error: 'st' was not declared in this scope
+..\W9-01_set&multiset_sample2.cpp:7:6: warning: unused variable 'a' [-Wunused-variable]
+
+13:08:08 Build Finished (took 437ms)
+

@@ -1,0 +1,9 @@
+10:29:28 **** Rebuild of configuration Debug for project Practice on Programming_W7_03_ClassTemp ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:79:12: warning: unused variable 'obj1' [-Wunused-variable]
+g++ -o "Practice on Programming_W7_03_ClassTemp.exe" main.o 
+
+10:29:30 Build Finished (took 1s.893ms)
+

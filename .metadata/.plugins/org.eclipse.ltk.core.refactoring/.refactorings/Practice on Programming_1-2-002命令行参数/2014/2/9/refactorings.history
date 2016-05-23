@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Practice on Programming_1-2-002命令行参数/main.cpp&apos; to &apos;Practice on Programming_1-2-002命令行参数.cpp&apos;" description="Rename resource &apos;main.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.cpp" name="Practice on Programming_1-2-002命令行参数.cpp" stamp="1393320702282" updateReferences="true"/>
+</session>

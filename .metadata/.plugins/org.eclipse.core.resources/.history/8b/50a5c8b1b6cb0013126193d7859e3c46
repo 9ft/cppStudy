@@ -1,0 +1,2 @@
+#include <iostream>
+#include <map> //使用multimap需要包含此头文件#include <string>using namespace std;

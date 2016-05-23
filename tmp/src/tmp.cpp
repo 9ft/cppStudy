@@ -1,0 +1,20 @@
+//下面程序的输出结果是：
+//A::Print: 1
+//B::Print: 2
+//B::Print: 3
+//请填空：
+#include <list>
+#include <algorithm>
+#include <vector>
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+
+
+int main() {
+	int a[] = { 2,5,1,4,3,3,2};
+	multiset <int> st(a,a+7);
+	cout << * st.lower_bound(3) << "," << *st.upper_bound(3) << endl;
+	return 0;
+}

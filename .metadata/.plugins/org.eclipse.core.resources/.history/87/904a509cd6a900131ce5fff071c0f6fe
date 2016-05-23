@@ -1,0 +1,126 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 2014Äê3ÔÂ4ÈÕ
+ *      Author: Mindy
+ */
+
+#include<iostream>
+#include<String>
+using namespace std;
+
+static int Time = 0;
+static void coutTime() {
+	cout.fill('0');
+	cout.width(3);
+	cout << Time << " ";
+}
+
+class BasePara {
+	unsigned int dragonHP;
+	unsigned int ninjaHP;
+	unsigned int icemanHP;
+	unsigned int lionHP;
+	unsigned int wolfHP;
+public:
+	BasePara(int dragon, int ninja, int iceman, int lion, int wolf) :
+			dragonHP(dragon), ninjaHP(ninja), icemanHP(iceman), lionHP(lion), wolfHP(wolf) {
+	}
+
+	int getHP(string str){
+		if(str=="dragon")
+			return dragonHP;
+
+	}
+
+	unsigned int getDragonHp() {
+		return dragonHP;
+	}
+
+	unsigned int getIcemanHp() {
+		return icemanHP;
+	}
+
+	unsigned int getLionHp() {
+		return lionHP;
+	}
+
+	unsigned int getNinjaHp() {
+		return ninjaHP;
+	}
+
+	unsigned int getWolfHp() {
+		return wolfHP;
+	}
+};
+class Team {
+	unsigned int HP = 0;
+	unsigned int count = 0;
+	string sortStr[5];
+	string currentRace;
+public:
+	unsigned int getCount() const {
+		return count;
+	}
+
+	void setCount(unsigned int count = 0) {
+		this->count = count;
+	}
+
+	unsigned int getHp() const {
+		return HP;
+	}
+
+	void setHp(unsigned int hp = 0) {
+		HP = hp;
+	}
+	const string& getCurrentRace() const {
+		return currentRace;
+	}
+
+	void setCurrentRace(const string& currentRace) {
+		this->currentRace = currentRace;
+	}
+
+	string getNextRace() {
+		if (currentRace == sortStr[0])
+			currentRace = sortStr[1];
+		return sortStr[1];
+		if (currentRace == sortStr[1])
+			currentRace = sortStr[2];
+		return sortStr[2];
+		if (currentRace == sortStr[2])
+			currentRace = sortStr[3];
+		return sortStr[3];
+		if (currentRace == sortStr[3])
+			currentRace = sortStr[4];
+		return sortStr[4];
+		if (currentRace == sortStr[4])
+			currentRace = sortStr[0];
+		return sortStr[0];
+	}
+
+	void makeWarrior(string raceStr,BasePara para){
+		para.getHP(raceStr);
+	}
+};
+
+static unsigned int TestNO = 0;
+static void setTestNO() {
+	cin >> TestNO;
+}
+static void showTestNO() {
+	cout << "Case:" << TestNO << endl;
+}
+
+int main() {
+	setTestNO();
+
+	showTestNO();
+
+	coutTime();
+
+	coutTime();
+	return 0;
+}
+

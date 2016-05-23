@@ -1,0 +1,20 @@
+20:36:34 **** Rebuild of configuration Debug for project Practice on Programming_3-quiz_re ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp:94:20: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp:95:23: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp:101:13: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+..\main.cpp: In member function 'int Team::makeRaceWarrior(std::string, BasePara)':
+..\main.cpp:195:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+..\main.cpp: In member function 'int Team::makeWarrior(BasePara)':
+..\main.cpp:233:2: warning: control reaches end of non-void function [-Wreturn-type]
+..\main.cpp: In member function 'std::string Team::gotoNextRace()':
+..\main.cpp:192:2: warning: control reaches end of non-void function [-Wreturn-type]
+..\main.cpp: In member function 'int Team::getRaceCount(std::string)':
+..\main.cpp:126:2: warning: control reaches end of non-void function [-Wreturn-type]
+..\main.cpp: In member function 'int BasePara::getHP(std::string)':
+..\main.cpp:51:2: warning: control reaches end of non-void function [-Wreturn-type]
+g++ -o "Practice on Programming_3-quiz_re.exe" main.o 
+
+20:36:36 Build Finished (took 2s.44ms)
+

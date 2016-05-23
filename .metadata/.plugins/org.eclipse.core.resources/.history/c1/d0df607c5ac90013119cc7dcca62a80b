@@ -1,0 +1,27 @@
+#include <iostream>
+#include <set>
+using namespace std;
+
+template <class T>
+void Print(T first,T last){
+	for(;first!=last;++first)
+		cout<<*first<<" ";
+	cout<<endl;
+}
+
+class A{
+private:
+	int n;
+public:
+	A(int n_){
+		n=n_;
+	}
+	friend bool operator<(const A& a1,const A& a2){
+		return a1.n<a2.n;
+	}
+	friend bool operator<<(ostream& o,const A& a2){
+		o<<a2.n;
+		return o;
+	}
+	friend class MyLess;
+};

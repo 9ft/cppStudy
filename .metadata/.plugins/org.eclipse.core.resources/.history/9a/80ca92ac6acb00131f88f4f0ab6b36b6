@@ -1,0 +1,10 @@
+//multimapÊ¾Àı
+#include <iostream>
+#include <map>
+using namespace std;
+int main(){
+	typedef multimap<int, double, less<int>> mmid;
+	mmid pairs;
+	cout<<"1)"<<pairs.count(15)<<endl;
+
+}

@@ -1,0 +1,20 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+class A {
+private:
+	int n;
+public:
+	A(int n_) {
+		n = n_;
+	}
+	friend bool operator<(const A &a1, const A& a2);
+	friend bool operator==(const A &a1, const A& a2);
+	friend ostream & operator (ostream &o,const A& a);
+};
+
+int main() {
+
+	return 0;
+}

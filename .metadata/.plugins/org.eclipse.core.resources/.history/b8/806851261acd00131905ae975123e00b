@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+#include <iterator>
+using namespace std;
+int main() {
+	int a[4] = { 1, 2, 3, 4 };
+	My_ostream_iterator<int> oit(cout, "*");
+	copy(a, a + 4, oit); //输出 1*2*3*4*
+	ofstream oFile("test.txt", ios::out);
+	My_ostream_iterator<int> oitf(oFile, "*");
+	copy(a, a + 4, oitf); //向test.txt文件中写入 1*2*3*4*
+	oFile.close();
+	return 0;
+}
+}

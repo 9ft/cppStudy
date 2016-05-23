@@ -1,0 +1,19 @@
+#include <iostream>
+#include <map> //使用multimap需要包含此头文件
+#include <string>
+using namespace std;
+
+class CStudent{
+public:
+	struct CInfo{
+		int id;
+		string name;
+	};
+	int score;
+	CInfo info;
+};
+typedef multimap<int, CStudent::CInfo> MAP_STD;
+int main(){
+
+	return 0;
+}

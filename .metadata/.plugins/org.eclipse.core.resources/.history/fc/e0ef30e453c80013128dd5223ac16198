@@ -1,0 +1,39 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+class A { //定义类A, 并以友元重载<, ==和<<
+private:
+	int n;
+public:
+	A(int n_) {
+		n = n_;
+	}
+	friend bool operator<(const A &a1, const A& a2) {
+		return a1.n < a2.n;
+	}
+	friend bool operator==(const A &a1, const A& a2) {
+		return a1.n == a2.n;
+	}
+	friend ostream & operator<<(ostream &o, const A& a) {
+		o << a.n;
+		return o;
+	}
+};
+
+//定义函数模版PrintList，打印列表中的对象
+template<class T>
+void PrintList(const list<T> & lst){
+	int tmp=lst.size();
+	if(tmp>0){
+		typename list<T>::const_iterator i;
+		i=lst.begin();
+		for(i=lst.begin();i!=lst.end();i++)
+			cout<<*i<<",";
+	}
+}
+
+int main() {
+
+	return 0;
+}

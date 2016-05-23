@@ -1,0 +1,11 @@
+12:52:24 **** Incremental Build of configuration Debug for project W7_03_ClassTemp ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:99:11: warning: unused variable 'obj3' [-Wunused-variable]
+..\main.cpp:102:11: warning: unused variable 'obj4' [-Wunused-variable]
+..\main.cpp:104:5: warning: unused variable 'obj5' [-Wunused-variable]
+g++ -o W7_03_ClassTemp.exe main.o 
+
+12:52:25 Build Finished (took 875ms)
+

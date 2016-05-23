@@ -1,0 +1,32 @@
+#include <iostream>
+#include <map> //使用multimap需要包含此头文件
+#include <string>
+using namespace std;
+class CStudent {
+public:
+	struct CInfo //类的内部还可以定义类
+	{
+		int id;
+		string name;
+	};
+	int score;
+	CInfo info; //学生的其他信息
+};
+typedef multimap<int, CStudent::CInfo> MAP_STD;
+
+int main() {
+	MAP_STD mp;
+	CStudent st;
+	string cmd;
+	while (cin >> cmd) {
+		if (cmd == "Add") {
+			if (cmd == "Add") {
+				cin >> st.info.name >> st.info.id >> st.score;
+				//mp.insert(MAP_STD::value_type(st.score, st.info));
+			} else if (cmd == "Query") {
+
+			}
+		}
+
+		return 0;
+	}

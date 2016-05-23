@@ -1,0 +1,67 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+class A { //定义类A, 并以友元重载<, ==和<<
+private:
+	int n;
+public:
+	A(int n_) {
+		n = n_;
+	}
+	friend bool operator<(const A &a1, const A& a2) {
+		return a1.n < a2.n;
+	}
+	friend bool operator==(const A &a1, const A& a2) {
+		return a1.n == a2.n;
+	}
+	friend ostream & operator<<(ostream &o, const A& a) {
+		o << a.n;
+		return o;
+	}
+};
+
+//定义函数模版PrintList，打印列表中的对象
+template<class T>
+void PrintList(const list<T> & lst) {
+	int tmp = lst.size();
+	if (tmp > 0) {
+		typename list<T>::const_iterator i;
+		i = lst.begin();
+		for (i = lst.begin(); i != lst.end(); i++)
+			cout << *i << ",";
+	}
+}
+
+int main() {
+	list<A> lst1, lst2;
+
+	lst1.push_back(1);
+	lst1.push_back(3);
+	lst1.push_back(2);
+	lst1.push_back(4);
+	lst1.push_back(2);
+
+	lst2.push_back(10);
+	lst2.push_front(20);
+	lst2.push_back(30);
+	lst2.push_back(30);
+	lst2.push_back(30);
+	lst2.push_front(40);
+	lst2.push_back(40);
+
+	cout << "1)";
+	PrintList(lst1);
+	cout << endl;
+
+	cout << "2)";
+	PrintList(lst2);
+	cout << endl;
+
+	lst2.sort(); //list容器的sort函数
+	cout << "3)";
+	PrintList(lst2);
+	cout << endl;
+
+	return 0;
+}

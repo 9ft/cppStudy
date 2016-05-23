@@ -1,0 +1,7 @@
+14:57:49 **** Incremental Build of configuration Debug for project W8-05_STLFun ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o W8-05_STLFun.o "..\\W8-05_STLFun.cpp" 
+g++ -o W8-05_STLFun.exe W8-05_STLFun.o 
+
+14:57:50 Build Finished (took 1s.524ms)
+
